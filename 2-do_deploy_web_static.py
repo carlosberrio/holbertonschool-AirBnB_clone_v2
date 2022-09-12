@@ -2,10 +2,11 @@
 """creates and distributes an archive to your web servers,
 using the function deploy
 """
-from fabric.api import *
+from fabric.api import local, put, root, env
 from datetime import datetime
 import os
 
+env.user = 'ubuntu'
 env.hosts = ['3.88.184.111', '34.236.158.184']
 
 
