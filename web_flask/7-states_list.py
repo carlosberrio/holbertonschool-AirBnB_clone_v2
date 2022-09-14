@@ -15,7 +15,7 @@ def states_list():
     Function that displays a HTML page with a list of all
     State objects from a database
     """
-    states = storage.all(State).values()
+    states = sorted(list(storage.all("State").values()), key=lambda x: x.name)
     return render_template('7-states_list.html', states=states)
 
 
